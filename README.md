@@ -102,6 +102,10 @@ charlesFromJupiter.homePlanet = "Jupiter"
 
 What will the value of `charles.homePlanet` be after the above code run? What about the value of `charlesFromJupiter.homePlanet`? Why?
 
+answer: Jupiter
+
+The charlesFromJupiter.homePlanet was changed because it was accessed and changed with the dot syntax 
+
 
 ## Question 5
 

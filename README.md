@@ -18,7 +18,18 @@ let fred = Giant()
 ```
 
 Will these three lines of code run? If not, why not?
+```
 
+```
+Answer: It will not work because homePlanet is a constant 'let' instance. You must change it to a mutable instsance 'var'
+
+class Giant {
+ var name: String = "Fred"
+ var weight: Double = 340.0
+ var homePlanet: String = "Earth"
+}
+
+let fred = Giant()
 ```swift
 fred.name = "Brick"
 fred.weight = 999.2
@@ -42,7 +53,7 @@ let bilbo = Alien(name: "Bilbo", height: 1.67, homePlanet: "Venus")
 ```
 
 Will these three lines of code run? If so, why not?
-
+Answer: It will not work because bilbo is a constant 'let' instance. You must change it to a mutable instance 'var'
 ```swift
 bilbo.name = "Jake"
 bilbo.height = 1.42
@@ -51,6 +62,16 @@ bilbo.homePlanet = "Saturn"
 
 Change the declaration of `bilbo` so that the above three lines of code **do** work:
 
+struct Alien {
+ var name: String
+ var height: Double
+ var homePlanet: String
+}
+var bilbo = Alien(name: "Bilbo", height: 1.67, homePlanet: "Venus")
+
+bilbo.name = "Jake"
+bilbo.height = 1.42
+bilbo.homePlanet = "Saturn"
 
 ## Question 3
 
@@ -63,7 +84,10 @@ let jason = edgar
 jason.name = "Jason"
 ```
 
-What will the value of `edgar.name` be after those three lines of code are run? What will the value of `jason.name` be? Why?
+What will the value of `edgar.name` be after those three lines of code are run? What will the value of `jason.name` be? Why?    
+
+jason.name will be "Jason"
+It is a variable in the the original class. Once  it was equated to edgar, which was equal to Giant() earlier,  then jason.name can be changed to another String
 
 
 ## Question 4

@@ -128,7 +128,23 @@ struct BankAccount {
 
 Does this code work? Why or why not?
 
+answer: It does not work because the '+=' and  '-=' would change the value within the struct. You can resolve this by mutating the functions
+
 Fix the `BankAccount` struct so it does work.
+
+struct BankAccount {
+ var owner: String
+ var balance: Double
+
+mutating func deposit(_ amount: Double) {
+ balance += amount
+ }
+
+mutating func withdraw(_ amount: Double) {
+ balance -= amount
+ }
+}
+
 
 Given the code below (which should incorporate any fixes you made):
 
@@ -139,6 +155,12 @@ joeAccount.withdraw(50.0)
 ```
 
 What will the value of `joeAccount.balance` be after the above code runs? What about the value of `joeOtherAccount.balance`? Why?
+
+answer: `joeOtherAccount.balance` will be 50.0 because once the function runs it will withdraw 50.0 from it. 
+
+answer: joeOtherAccount.balance will remain at 100.0 because it doesnt inherit joeAccount properties. Only classes can do that.
+
+
 
 
 ## Question 6

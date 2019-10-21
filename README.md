@@ -289,10 +289,27 @@ let colorDictArray: [[String: Double]] = [["red": 1.0, "green": 0.0, "blue": 0.0
 ## Question 11
 
 a. Create a struct called `Movie` that has properties for `name` (`String`), `year` (`Int`), `genre` (`String`), `cast` (`[String]`), and `description` (`String`). Create an instance of your `Movie` class
+struct Movie {
+var name: String
+ var year: Int
+ var genre: String
+ var cast: [String]
 
 b. Create an instance method inside `Movie` called `blurb` that returns a formatted string describing the movie.
 
 Ex: "Borat came out in 2006. It was an odd film starring Sacha Baron Cohen as a man named Borat who was visiting America from Kazakhstan."
+
+struct Movie {
+   var name: String
+    var year: Int
+    var genre: String
+    var cast: [String]
+    
+    func blurb(arg1: String) {
+        print("This movie was the greatest film to ever be created. It makes Citizen Cane look like garbage")
+    }
+}
+
 
 
 ## Question 12
